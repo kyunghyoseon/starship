@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>STARSHIP</title>
+<meta name="author" content="Alvaro Trigo Lopez" />
+<meta name="description" content="fullPage full-screen apple iphone 5c similar website. Reproducing one sigle scrolling site like Apple iPhone." />
+<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,apple,iphone5c,iphone5s,iphone,iphone-5c,like,reproduce,similar,how to" />
+<meta name="Resource-type" content="Document" />
+
+
+<link rel="stylesheet" type="text/css" href="../jquery.fullPage.css" />
+<link rel="stylesheet" type="text/css" href="reset.css" />
+<!-- <link rel="stylesheet" type="text/css" href="examples.css" /> -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+*,*::after,*::before{box-sizing: border-box;}
+a{
+	text-decoration: none; 
+	list-style: none;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+header{
+	width:100%; 
+	z-index:999; 
+	height:3rem;
+	position:fixed; 
+	top:0rem; 
+	left:0; 
+	background:none; 
+}
+header .k-hamburger{
+    position:fixed; 
+    left:2%;
+	margin-top:20px;
+
+}
+#kk-menu {
+  position:relative;
+  width:100%;
+  margin:0 auto;
+}
+/* 헤더 메뉴바 버튼, 로고 부분 */
+#kk-gnb{
+  position:relative;    
+  width:100%;
+  height:52px;  
+  margin:0 auto;   
+  top: 10px; 
+}
+#kk-total_btn{
+  position:absolute;
+  top:8px;
+  left:20px;
+}
+.kk-star_logo{
+  position: absolute;
+  left: 47%; 
+}
+/* 햄버거 클릭시 메뉴 부분 */
+#kk-total_menu{
+  width:100%;
+  height:100vh;
+  background-color: rgb(255, 255, 255);
+  position:absolute;
+  top:0px;
+  left:0;
+  display:none;
+  z-index: 9999;
+}
+.kk-menu_box{
+  /* border:  1px solid red; */
+  width: 75%;
+  height: 350px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.kk-menu_box dl{
+  float:left;
+  margin:15px 42px 0 70px;
+}
+.kk-menu_box dt{
+  margin-bottom:40px;
+  font-size: 23px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.kk-menu_box li{
+  line-height:28px;
+  text-align: left;
+}
+.kk-menu_box li a:hover{
+	color: rgb(173, 173, 173);
+}
+.kk-menu_box dt:hover{
+	color: rgb(104, 67, 0);
+}
+.kk-menu_box dd ul li a {
+  color:rgb(0, 0, 0);
+  font-size: 0.9rem;
+}
+.line{
+  position: absolute;
+  width: 69%;
+  border-bottom: 1px solid #dbdbdb;
+  top: 152px;
+  left: 306px;
+  margin: 15px auto;
+}
+.line1{
+  position: absolute;
+  width: 69%;
+  border-bottom: 1px solid #dbdbdb;
+  top: 635px;
+  left: 306px;
+  margin: 15px auto;
+}
+/* 메뉴바 하단 로고 & 아이콘부분 */
+.kk-menu_box1{
+  /* border:  1px solid red; */
+  width: 75%;
+  height: 150px;
+  margin: 0 auto;
+  bottom: 0;
+  margin-top: 200px;
+}
+.kk-menu_box1 ul {
+  /* border: 1px solid black; */
+  width: 27%;
+  height: 50px;
+  margin:15px 5px 0 70px;
+  float: left;
+}
+.kk-menu_box1 ul li{
+  float: left;
+  padding-right: 20px;
+  font-size: 0.8rem;
+}
+.kk-menu_box1 ul:nth-child(1){
+  margin-right: 157px;
+}
+.kk-menu_box1 ul:nth-child(2){
+  width: 24%;
+  margin-right: 10px;
+}
+.kk-menu_box1 ul:nth-child(3){
+  margin-left: 0;
+  margin-right: 0;
+}
+#kk-total_close{
+  position:absolute;
+  top:20px;
+  left:25px;
+}
+
+#myVideo{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top:0;
+	right:0;
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+	background-color: black; 
+	background-position: center center;
+	background-size: contain;
+	object-fit: cover; 
+	z-index:3;
+}
+	
+/* Section 0
+* --------------------------------------- */
+
+
+/* Section 1
+* --------------------------------------- */
+
+/* Section 2
+* --------------------------------------- */
+
+/* Section 3
+* --------------------------------------- */
+
+	/* Overwriting fullPage.js tooltip color
+* --------------------------------------- */
+.fp-tooltip{
+	color: #ffffff;
+}
+#fp-nav span, .fp-slidesNav span{
+	border-color: #ffffff;
+}
+#fp-nav li .active span, .fp-slidesNav .active span{
+	background: #ffffff;
+}
+
+footer{
+	width: 100%;
+	z-index: 99;
+	height: 3rem;
+	/* border: 1px solid red; */
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	color: #dfdfdf;
+}
+
+/* 하단 고정 footer */
+.kk-menu_box2{
+  /* border:  1px solid red; */
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+}
+.kk-menu_box2 ul {
+  /* border: 1px solid rgb(255, 255, 255); */
+  /* margin:15px 5px 0 70px; */
+  float: left;
+}
+.kk-menu_box2 ul li{
+  float: left;
+  padding-right: 20px;
+  font-size: 0.8rem;
+}
+.kk-menu_box2 ul li a{
+	color: #dfdfdf;
+}
+.kk-menu_box2 ul:nth-child(1){
+	width: 18%;
+	margin-right: 0px;
+	margin-left: 40px;
+}
+.kk-menu_box2 ul:nth-child(2){
+	width: 4%;
+	margin-right: 20px;
+
+}
+.kk-menu_box2 ul:nth-child(3){
+	width: 6%;
+	margin-right: 570px;
+}
+.kk-menu_box2 ul:nth-child(4){
+	margin-right: 20px;
+}
+.kk-menu_box2 ul:nth-child(5){
+	margin-right: 0;
+}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="../jquery.fullPage.js"></script>
+	<script type="text/javascript" src="examples.js"></script>
+	<script type="text/javascript" src="h_starship.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				'verticalCentered': false,
+				'css3': true,
+				'sectionsColor': ['#000','#000','#000','#000','#000','#000','#000','#000',],
+				'navigation': true,
+				'navigationPosition': 'right',
+				'navigationTooltips': ['JOOGONEY_FREEDOM.MV', 'BOR&amp;MARBLE', 'MONSTAX_BEAUTIFUL LIAR.MV', 'TEBAS_LAND', 'IVE_IWANT.MV', 'WJSN_LASTSEQUENCE.MV', 'JEONGSEWOON_ROLLERCOASTER.MV', 'CRAVITY_GROOVY.MV'],
+
+				'afterLoad': function(anchorLink, index){
+					if(index == 2){
+						$('#iphone3, #iphone2, #iphone4').addClass('active');
+					}
+				},
+
+				'onLeave': function(index, nextIndex, direction){
+					if (index == 3 && direction == 'down'){
+						$('.section').eq(index -1).removeClass('moveDown').addClass('moveUp');
+					}
+					else if(index == 3 && direction == 'up'){
+						$('.section').eq(index -1).removeClass('moveUp').addClass('moveDown');
+					}
+
+					$('#staticImg').toggleClass('active', (index == 2 && direction == 'down' ) || (index == 4 && direction == 'up'));
+					$('#staticImg').toggleClass('moveDown', nextIndex == 4);
+					$('#staticImg').toggleClass('moveUp', index == 4 && direction == 'up');
+				}
+			});
+
+			// 햄버거 메뉴바
+			$("#kk-total_btn a").click(function(){
+				$("#kk-total_menu").stop().slideDown("normal");
+				$(this).find("img").attr("src",$(this).find("img").attr("src").replace("out1.png","over1.png"));
+				return false; 
+			});
+
+			$("#kk-total_close a").click(function(){
+				$("#kk-total_menu").stop().slideUp("fast");
+				$("#kk-total_btn a img")
+				.attr("src",$("#kk-total_btn a img").attr("src").replace("over1.png","out1.png"));
+				return false;
+			});
+});
+
+	</script>
+</head>
+<body>
+<header id="k-header">
+	<div id="kk-menu">
+		<div id="kk-gnb">
+			<p id="kk-total_btn">
+			  <a href="#">
+			  <img src="imgs/allmenu_btn_out1.png" alt="전체 메뉴" width="25"/>
+			  </a>
+		   </p>
+		   <img class="kk-star_logo" src="imgs/STARSHIP_logo.png" alt="logo">
+		</div>
+	 
+	   <div id="kk-total_menu">
+		<div class="kk-menu_box">
+		  <dl>
+			 <dt>COMPANT</dt>
+			 <dd>
+				<ul>
+				   <li><a href="#">회사소개</a></li>
+				   <li><a href="#">대표인사말</a></li>
+				   <li><a href="#">연혁</a></li>
+				   <li><a href="#">사업현황</a></li>
+				   <li><a href="#">오시는길</a></li>
+				   <li><a href="#">공고</a></li>
+				</ul>
+			 </dd>
+		  </dl>
+		  <dl>
+			 <dt>ARTISTS</dt>
+			 <dd>
+				<ul>
+				   <li><a href="#">가수</a></li>
+				   <li><a href="#">엔터테이너</a></li>
+				</ul>
+			 </dd>
+		  </dl>
+		  <dl>
+			 <dt>ACTORS</dt>
+			 <dd>
+				<ul>
+				   <li><a href="#">배우</a></li>
+				</ul>
+			 </dd>
+		  </dl>
+		  <dl>
+			 <dt>PR CENTER</dt>
+			 <dd>
+				<ul>
+				   <li><a href="#">NOTICE</a></li>
+				   <li><a href="#">MULTIMEDIA</a></li>
+				   <li><a href="#">NEW PELEASE</a></li>
+				</ul>
+			 </dd>
+		  </dl>
+		  <dl>
+			 <dt>AUDITION</dt>
+			 <dd>
+				<ul>
+				   <li><a href="#">지원안내</a></li>
+				   <li><a href="#">지원하기</a></li>
+				   <li><a href="#">FAQ</a></li>
+				</ul>
+			 </dd>
+		  </dl>
+		  <dl>
+			 <dt>STARSHIP SQUARE</dt>
+			 <dd>
+				<ul>
+				   <li><a href="#">STARSHIP SQUARE</a></li>
+				</ul>
+			 </dd>
+		  </dl>
+		</div>
+		  
+		  <div class="line"></div>
+		  <div class="line1"></div>
+	 
+		<div class="kk-menu_box1 cf">
+		   <ul class="kk-logo1">
+			  <li><a href="#"><img src="imgs/STARSHIP_logo1.png" alt="logo"></a></li>
+		   </ul>
+		   <ul class="kk-icon1">
+			  <li>STARSHIP</li>
+			  <li><a href="#"><img src="imgs/face.png" alt="logo"></a></li>
+			  <li><a href="#"><img src="imgs/insta.png" alt="logo"></a></li>
+			  <li><a href="#"><img src="imgs/twitter.png" alt="logo"></a></li>
+			  <li><a href="#"><img src="imgs/post.png" alt="logo"></a></li>
+			  <li><a href="#"><img src="imgs/youtube.png" alt="logo"></a></li>
+			  <li><a href="#"><img src="imgs/naver_tv.png" alt="logo"></a></li>
+		   </ul>
+		   <ul class="kk-icon2">
+			  <li>KINGLONG by STARSHIP</li>
+			  <li><a href="#"><img src="imgs/insta.png" alt="logo"></a></li>
+			  <li><a href="#"><img src="imgs/twitter.png" alt="logo"></a></li>
+			  <li><a href="#"><img src="imgs/post.png" alt="logo"></a></li>
+			  <li><a href="#"><img src="imgs/youtube.png" alt="logo"></a></li>
+			  <li><a href="#"><img src="imgs/naver_tv.png" alt="logo"></a></li>
+		   </ul>
+		</div>   <!--menu_box1 end-->
+	 
+	 
+		  <p id="kk-total_close">
+			 <a href="#">
+				 <img src="imgs/allmenu_close_btn.png" alt="전체메뉴 닫기" width="20"/>
+			 </a>
+		  </p>
+	   </div>    <!--total_menu end-->
+	 </div>      <!--menu end-->
+</header>
+
+<div id="fullpage">
+	<div class="section " id="section0">
+		<video autoplay loop muted id="myVideo">
+			<source src="../JOOHONEY_FREEDOM_MV.mp4" type="video/mp4">
+		</video>
+	</div>
+	<div class="section" id="section1">
+		<video autoplay loop muted id="myVideo">
+			<source src="../bor&marble.mp4" type="video/mp4">
+		</video>
+	</div>
+
+	<div class="section moveDown" id="section2">
+		<video autoplay loop muted id="myVideo">
+			<source src="../MONSTAX_Beautiful Liar_MV.mp4" type="video/mp4">
+		</video>
+	</div>
+	<div class="section moveDown" id="section3">
+		<video autoplay loop muted id="myVideo">
+			<source src="../tebas_land.mp4" type="video/mp4">
+		</video>
+
+	</div>
+	<div class="section moveDown" id="section4">
+		<video autoplay loop muted id="myVideo">
+			<source src="../IVE_IWANT_MV.mp4" type="video/mp4">
+		</video>
+	</div>
+	<div class="section moveDown" id="section5">
+		<video autoplay loop muted id="myVideo">
+			<source src="../WJSN_LastSequence_MV.mp4" type="video/mp4">
+		</video>
+	</div>
+	<div class="section moveDown" id="section6">
+		<video autoplay loop muted id="myVideo">
+			<source src="../JEONGSEWOON_RollerCoaster_MV.mp4" type="video/mp4">
+		</video>
+	</div>
+	<div class="section moveDown" id="section7">
+		<video autoplay loop muted id="myVideo">
+			<source src="../CRAVITY_Groovy_MV.mp4" type="video/mp4">
+		</video>
+	</div>
+</div>
+
+<!-- 하단 고정 푸터 -->
+<footer>
+	<div class="kk-menu_box2 cf">
+		<ul>
+			<li>Copyright © STARSHIP ENT all rights Reserved.</li>
+		</ul>
+		<ul>
+			<li><a href="#">AUDITION</a></li>
+		</ul>
+		<ul>
+			<li><a href="#">CONTACT</a></li>
+		</ul>
+		<ul class="kk-icon1">
+		   <li>STARSHIP</li>
+		   <li><a href="#"><img src="imgs/face.png" alt="logo"></a></li>
+		   <li><a href="#"><img src="imgs/insta.png" alt="logo"></a></li>
+		   <li><a href="#"><img src="imgs/twitter.png" alt="logo"></a></li>
+		   <li><a href="#"><img src="imgs/post.png" alt="logo"></a></li>
+		   <li><a href="#"><img src="imgs/youtube.png" alt="logo"></a></li>
+		   <li><a href="#"><img src="imgs/naver_tv.png" alt="logo"></a></li>
+		</ul>
+		<ul class="kk-icon2">
+		   <li>KINGLONG by STARSHIP</li>
+		   <li><a href="#"><img src="imgs/insta.png" alt="logo"></a></li>
+		   <li><a href="#"><img src="imgs/twitter.png" alt="logo"></a></li>
+		   <li><a href="#"><img src="imgs/post.png" alt="logo"></a></li>
+		   <li><a href="#"><img src="imgs/youtube.png" alt="logo"></a></li>
+		   <li><a href="#"><img src="imgs/naver_tv.png" alt="logo"></a></li>
+		</ul>
+	 </div>   <!--menu_box2 end-->
+</footer>
+
+</body>
+</html>
